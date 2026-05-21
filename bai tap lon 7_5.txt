@@ -1,0 +1,51 @@
+#Câu7
+def la_so_nguyen_to(n):
+    if n < 2: return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+n = int(input("Nhập số lượng phần tử n (0 < n < 100): "))
+a = []
+for i in range(n):
+    a.append(int(input(f"Nhập x{i+1}: ")))
+
+tong_snt = sum(x for x in a if la_so_nguyen_to(x))
+
+print(f"Tổng các số nguyên tố là: {tong_snt}")
+
+# Kiểm tra điều kiện: là số lẻ và > 50
+if tong_snt > 50 and tong_snt % 2 != 0:
+    print("Tổng này là số lẻ và lớn hơn 50.")
+else:
+    print("Tổng này không thỏa mãn đồng thời là số lẻ và lớn hơn 50.")
+    #Câu8
+x = int(input("Nhập x: "))
+y = int(input("Nhập y: "))
+z = int(input("Nhập z: "))
+
+tich = x * y * z
+tich_str = str(tich)
+
+so_chu_so = len(tich_str)
+chu_so_lon_nhat = max(tich_str)
+
+print(f"Tích {x} * {y} * {z} = {tich}")
+print(f"Số chữ số của tích: {so_chu_so}")
+print(f"Chữ số lớn nhất trong tích: {chu_so_lon_nhat}")
+#Câu9
+a = int(input("Nhập a: "))
+b = int(input("Nhập b: "))
+c = int(input("Nhập c: "))
+
+tong = a + b + c
+tong_str = str(tong)
+
+# Đếm các chữ số chẵn
+dem_chan = 0
+for chu_so in tong_str:
+    if int(chu_so) % 2 == 0:
+        dem_chan += 1
+
+print(f"Tổng {a} + {b} + {c} = {tong}")
+print(f"Trong tổng có {dem_chan} chữ số chẵn.")
